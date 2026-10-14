@@ -1,0 +1,44 @@
+# Dependencias e arquivos gerados
+node_modules/
+.next/
+.vinext/
+dist/
+out/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+.pnp.*
+
+# Segredos e configuracoes locais
+.env
+.env.*
+!.env.example
+!.env.*.example
+.dev.vars
+.dev.vars.*
+*.pem
+*.key
+.aws/
+.mcp.json
+
+# Estado local de ferramentas e hospedagem
+.codex/
+.codex-erinaldo/
+.agents/
+.impeccable/
+.sites-runtime/
+.wrangler/
+.vercel/
+.playwright-mcp/
+artifacts/
+outputs/
+work/
+skills-lock.json
+
+# Logs, caches e sistema operacional
+*.log
+*.sock
+.cache/
+.DS_Store
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+const path='app/journey.css';
+let css=fs.readFileSync(path,'utf8');
+css=css.replace('.journey-app .product-navigation{height:68px}.journey-app .product-navigation-inner{min-height:68px;padding-inline:20px;gap:12px}.journey-app .context-trigger{display:none}', '.journey-app .product-navigation{height:auto}.journey-app .product-navigation-inner{min-height:68px;padding:12px 20px;gap:8px;flex-wrap:wrap}.journey-app .context-trigger{display:flex;order:3;width:100%;flex-basis:100%;padding:10px 0 0;border-left:0;border-top:1px solid var(--color-line)}');
+fs.writeFileSync(path,css);
+const resultsPath='components/product/journey-results.tsx';
+let results=fs.readFileSync(resultsPath,'utf8');
+results=results.replace('description={`${product.className} · sessão de 30 set · Expedição Estratégica`}', 'description={`${product.className} · sessão de demonstração de 30 set`}');
+results=results.replace('aria-label="Resumo da sessão"','aria-label="Resumo da sessão de demonstração"');
+results=results.replace('Fonte: questão 6 · respostas da sessão · 30 set','Demonstração: questão 6 · respostas simuladas');
+fs.writeFileSync(resultsPath,results);
+const homePath='components/product/journey-workspace.tsx';
+let home=fs.readFileSync(homePath,'utf8');
+home=home.replace('Plus,Sparkles,Users','Plus,Users').replace('<Sparkles className="j-title-spark" aria-hidden="true" size={24}/>','');
+fs.writeFileSync(homePath,home);

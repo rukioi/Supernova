@@ -1,0 +1,70 @@
+﻿.gm-board {
+  --gm-ink: color-mix(in srgb, var(--pv-accent) 84%, #172c43);
+  --gm-muted: color-mix(in srgb, var(--pv-accent) 48%, #344d66);
+  --gm-line: color-mix(in srgb, var(--pv-accent) 27%, transparent);
+  padding: 17px 20px 15px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 48% 78%, color-mix(in srgb, var(--pv-accent) 8%, transparent), transparent 58%),
+    color-mix(in srgb, var(--pv-tint) 76%, white);
+}
+.gm-map-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px 12px; margin: 13px 0 2px 2px; color: var(--gm-ink); }
+.gm-map-heading strong { font-size: 14px; font-weight: 720; letter-spacing: -.01em; }
+.gm-map-heading span { color: var(--gm-muted); font-size: 12px; line-height: 1.5; }
+.gm-map-viewport { overflow-x:auto; overflow-y:hidden; scrollbar-width:thin; overscroll-behavior-x:contain; border-radius:var(--radius-control); }
+.gm-map { display: block; width: 100%; height: auto; max-height: none !important; margin: 0 !important; overflow: visible; color: var(--pv-accent); }
+.gm-map text { font-family: var(--font-body); }
+.gm-terrain { fill: color-mix(in srgb, var(--pv-accent) 5%, transparent); stroke: color-mix(in srgb, var(--pv-accent) 11%, transparent); stroke-width: 1; }
+.gm-small { fill: var(--gm-muted); font-size: 10px; font-weight: 700; letter-spacing: .06em; }
+.gm-label { fill: var(--gm-ink); font-size: 13px; font-weight: 700; }
+.gm-state { fill: var(--gm-muted); font-size: 9px; font-weight: 700; letter-spacing: .04em; }
+.gm-compass circle { fill: color-mix(in srgb, var(--pv-tint) 40%, white); stroke: var(--gm-line); }
+.gm-compass path { fill: var(--pv-accent); }
+.gm-legend { gap: 8px 18px; padding: 3px 2px 0; color: var(--gm-muted); font-size: 12px; }
+.gm-legend i { width: 8px; height: 8px; border-radius: 2px; border-color: var(--gm-line); }
+.gm-legend i.is-earned { border-color: var(--pv-accent); background: var(--pv-accent); }
+.gm-legend i.gm-current-key { border: 2px solid var(--pv-accent); background: white; }
+.gm-scout-route { fill: none; stroke: var(--gm-line); stroke-width: 1.5; stroke-dasharray: 2 5; }
+.gm-tracker { fill: var(--pv-accent); stroke: white; stroke-width: 3; }
+.gm-wall { fill: none; stroke: color-mix(in srgb, var(--pv-accent) 24%, transparent); stroke-width: 8; stroke-linecap: round; }
+.gm-wall-light { fill: none; stroke: color-mix(in srgb, var(--pv-accent) 42%, transparent); stroke-width: 1; stroke-dasharray: 3 5; }
+.gm-fortress { fill: color-mix(in srgb, var(--pv-tint) 40%, white); stroke: color-mix(in srgb, var(--pv-accent) 62%, #43536a); stroke-width: 1.6; stroke-linejoin: round; }
+.gm-gate { fill: none; stroke: color-mix(in srgb, var(--pv-accent) 32%, white); stroke-width: 1.5; }
+.gm-post-mark { fill: white; stroke: var(--pv-accent); stroke-width: 1.4; }
+.gm-post-number { fill: var(--pv-accent); font-size: 10px; font-weight: 800; }
+.gm-fort.is-earned .gm-fortress { fill: color-mix(in srgb, var(--pv-accent) 80%, white); }
+.gm-fort.is-earned .gm-post-mark { fill: white; }
+.gm-fort.is-earned .gm-post-number { fill: var(--pv-accent); }
+.gm-fort.is-current .gm-fortress { stroke-width: 2.8; }
+.gm-fort.is-current .gm-post-mark { stroke-width: 2.5; }
+.gm-link { stroke: color-mix(in srgb, var(--pv-accent) 23%, transparent); stroke-width: 2; stroke-dasharray: 4 5; }
+.gm-link.is-earned { stroke: var(--pv-accent); stroke-width: 3; stroke-dasharray: none; }
+.gm-hex { fill: color-mix(in srgb, var(--pv-tint) 44%, white); stroke: color-mix(in srgb, var(--pv-accent) 50%, #57677b); stroke-width: 1.5; stroke-linejoin: round; }
+.gm-cell-core { fill: color-mix(in srgb, var(--pv-accent) 40%, white); }
+.gm-territory.is-earned .gm-hex { fill: color-mix(in srgb, var(--pv-accent) 78%, white); stroke: var(--pv-accent); }
+.gm-territory.is-earned .gm-cell-core { fill: white; }
+.gm-check { fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.gm-territory.is-current .gm-hex { stroke-width: 3; stroke-dasharray: 5 3; }
+.gm-base-seal circle { fill: color-mix(in srgb, var(--pv-accent) 85%, #1d3149); stroke: white; stroke-width: 3; }
+.gm-base-seal path { fill: white; }
+.gm-route-bed, .gm-route-branch { fill: none; stroke: color-mix(in srgb, var(--pv-accent) 25%, transparent); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 2 8; }
+.gm-route-branch { stroke-dasharray: 3 6; opacity: .4; }
+.gm-route-branch.is-selected { stroke: var(--pv-accent); opacity: .8; }
+.gm-route-progress { fill: none; stroke: var(--pv-accent); stroke-width: 3.5; stroke-linecap: round; }
+.gm-guide { stroke: color-mix(in srgb, var(--pv-accent) 15%, transparent); stroke-width: 1; stroke-dasharray: 2 7; }
+.gm-checkpoint-ring { fill: color-mix(in srgb, var(--pv-tint) 45%, white); stroke: color-mix(in srgb, var(--pv-accent) 45%, #56677c); stroke-width: 1.5; }
+.gm-checkpoint-core { fill: white; stroke: color-mix(in srgb, var(--pv-accent) 20%, transparent); }
+.gm-checkpoint-number { fill: var(--pv-accent); font-size: 12px; font-weight: 800; }
+.gm-checkpoint.is-earned .gm-checkpoint-core { fill: var(--pv-accent); }
+.gm-checkpoint.is-earned .gm-checkpoint-number { fill: white; }
+.gm-checkpoint.is-current .gm-checkpoint-ring { stroke: var(--pv-accent); stroke-width: 3; }
+.gm-expedition-marker circle { fill: color-mix(in srgb, var(--pv-accent) 12%, white); stroke: white; stroke-width: 3; }
+.gm-expedition-marker path { fill: var(--pv-accent); }
+@media (max-width: 760px) {
+  .gm-board { padding-inline: 12px; }
+  .gm-map { min-width: 500px; }
+  .gm-map-heading { align-items: flex-start; flex-direction: column; gap: 2px; margin-top: 10px; }
+  .gm-legend { flex-wrap:wrap; }
+}
+/* Reduced motion is resolved in the component: final positions stay intact. */
+

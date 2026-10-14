@@ -1,0 +1,50 @@
+/* Preparation surface and interaction states. Existing tokens remain authoritative. */
+.j-action-context { display:flex; align-items:center; gap:9px; font-size:14px; font-weight:600; color:#d9e6fa; }
+.j-action-card .j-experience-meta,.j-action-card .j-progress-next { color:#c6d5ed; }
+.j-action-card .j-progress { color:#e8f0ff; }
+.j-action-card .j-progress>div { background:#ffffff26; }
+.j-action-card .j-progress i { background:var(--color-achievement); }
+.j-action-card .j-button-primary { background:var(--color-achievement); color:var(--color-ink); }
+.j-preparation-map { flex:0 0 214px; padding:18px; border-radius:12px; background:#ffffff08; }
+.j-preparation-map-heading { display:flex; gap:8px; align-items:center; font-size:12px; color:#d9e6fa; margin-bottom:14px; }
+.j-preparation-map ol { list-style:none; padding:0; margin:0; }
+.j-preparation-map li { position:relative; display:flex; gap:10px; align-items:center; min-height:38px; color:#b4c5df; font-size:12px; }
+.j-preparation-stop { position:relative; z-index:1; display:grid; place-items:center; width:27px; height:27px; border-radius:8px; background:var(--color-ink); border:1px solid #ffffff35; }
+.j-preparation-map b { font-weight:500; }
+.j-preparation-connector { position:absolute; width:2px; height:15px; left:12px; top:-8px; background:#ffffff26; }
+.j-preparation-connector i { display:block; height:100%; background:var(--color-mint); transform-origin:top; }
+.j-preparation-map li:first-child .j-preparation-connector { display:none; }
+.j-preparation-map .is-complete { color:var(--color-mint); }
+.is-complete .j-preparation-stop { background:#216344; border-color:#bfead760; }
+.j-preparation-map .is-current { color:var(--color-achievement); }
+.is-current .j-preparation-stop { background:var(--color-achievement); border-color:transparent; color:var(--color-ink); }
+.j-preparation-current { font-size:10px; margin-left:auto; color:var(--color-achievement); }
+.j-action-card .j-action-copy h2>span { color:var(--color-achievement); }
+.j-learning-pulse h2 { margin-top:8px; }
+.j-page-intro h1 { text-wrap:balance; margin-top:0; }
+.j-context-row { border-radius:8px; }
+.se-progress i { width:100%; transform-origin:left; transition:transform var(--motion-state) var(--motion-ease); }
+.pv-feedback { animation:campus-feedback var(--motion-state) var(--motion-ease); }
+.pv-result-grid { animation:campus-feedback var(--motion-context) var(--motion-ease); }
+.se-toast:has(>span) { animation:campus-feedback var(--motion-state) var(--motion-ease); }
+@keyframes campus-feedback { from { opacity:.65; transform:translateY(6px); } to { opacity:1; transform:none; } }
+body { scrollbar-color:var(--color-muted) var(--color-canvas); }
+input,textarea { caret-color:var(--color-action); }
+.j-result-metrics,.pv-result-grid,.se-team-score { font-variant-numeric:tabular-nums; }
+@media(hover:hover) and (pointer:fine) {
+ .j-action-card .j-button-primary:hover { background:var(--color-mint); }
+ .j-context-row:hover>svg,.j-text-action:hover>svg { transform:translateX(3px); }
+ .j-context-row>svg,.j-text-action>svg { transition:transform var(--motion-micro) var(--motion-ease); }
+}
+@media(max-width:760px) {
+ .j-action-card-body { flex-direction:column; gap:24px; }
+ .j-preparation-map { flex:auto; width:100%; }
+ .j-preparation-map ol { display:grid; grid-template-columns:1fr 1fr; gap:4px 14px; }
+ .j-preparation-connector { display:none; }
+ .j-action-card-top { flex-wrap:wrap; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .pv-feedback,.pv-result-grid,.se-toast:has(>span) { animation:none; }
+ .j-button,.se-progress i,.j-context-row>svg,.j-text-action>svg { transition-property:color,background-color; }
+ .j-button:active { transform:none; }
+}
