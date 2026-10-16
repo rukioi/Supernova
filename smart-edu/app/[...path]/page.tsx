@@ -1,2 +1,1 @@
-import {ProductApp} from '@/components/product/app';
-export default function Page(){return <ProductApp/>;}
+export default function Page() { return null; }

@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "21st": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-fetch"
+      ],
+      "env": {
+        "21st_sk": "21st_sk_a527197f30f34a23d6b311825300c7782ffe9a5702eaf6f031b18b40f1ecb153"
+      }
+    },
+    "motion": {
+      "url": "https://mcp.motion.so/mcp"
+    }
+  },
+  "registries": {
+    "@acme": "https://acme.com/r/{name}.json"
+  }
+}

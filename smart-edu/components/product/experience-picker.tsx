@@ -35,8 +35,8 @@ export function ExperiencePicker({ value, onChange }: { value: string; onChange:
       {ordered.map((experience) => {
         const selected = value === experience.name;
         const Icon = experience.icon;
-        const id = `experience-${experience.kind}`;
-        return <motion.label layout={!reduce} transition={transition} style={{ borderRadius: 14 }} key={experience.kind} htmlFor={id} className={`se-experience-option experience-${experience.kind}${selected ? " is-selected" : ""}`}>
+        const id = `${groupId}-experience-${experience.kind}`;
+        return <motion.label layout={!reduce} whileHover={reduce ? undefined : { y: -4 }} whileTap={reduce ? undefined : { scale: .99 }} transition={transition} style={{ borderRadius: 14 }} key={experience.kind} htmlFor={id} className={`se-experience-option experience-${experience.kind}${selected ? " is-selected" : ""}`}>
           <div className="se-experience-option-top"><span><Icon size={15} />{experience.focus}</span><RadioGroupItem value={experience.name} id={id} aria-label={experience.name} className="se-experience-radio" /></div>
           <motion.div layout={reduce ? false : "position"} transition={transition} className="se-experience-art"><ExperienceImage template={experience.name} priority={selected} /></motion.div>
           <motion.div layout={reduce ? false : "position"} transition={transition} className="se-experience-copy"><strong>{experience.name}</strong><p>{experience.description}</p>{selected && <span className="se-experience-current">Dinâmica escolhida para a aula</span>}</motion.div>

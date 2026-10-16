@@ -1,5 +1,7 @@
 # Design e experiência do Supernova
 
+- [Redesign significativo do frontend — 20 tickets](redesign-frontend/README.md): direção integral, quatro fases, dependências e aceite funcional/visual.
+
 - [Auditoria UX/UI](UX_UI_AUDIT.md): problemas, evidências, severidade e cobertura funcional.
 - [Direção de arte](DESIGN_DIRECTION.md): identidade e decisões visuais.
 - [Sistema de movimento](MOTION_SYSTEM.md): tokens, causalidade e acessibilidade.

@@ -3,6 +3,8 @@
 import { Check, Flag, Search, ShieldCheck, type LucideIcon } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { useEffect, useRef } from "react";
+import { ExperienceImage } from "./experience-picker";
+import { previewFormats } from "./preview-model";
 import type { ExperienceKind } from "./preview-model";
 
 const spring = { type: "spring" as const, stiffness: 240, damping: 30, mass: 0.9 };
@@ -31,7 +33,7 @@ export function PreviewBoard({ kind, phase, route, decision, revised, answered, 
     const currentX = [96, 280, 464][target];
     const names = ["Conceito", "Evidência", "Limites"];
     return <section className="pv-board gm-board" data-board="defense" data-phase={step} aria-label="Mapa tático de defesa">
-      <div className="pv-board-caption"><ShieldCheck size={16} /><span>Perímetro de evidências</span><b>{earnedCount}/3 posições sustentadas</b></div>
+      <div className="gm-world-art" aria-hidden="true"><ExperienceImage template={previewFormats[kind].name} /></div><div className="pv-board-caption"><ShieldCheck size={16} /><span>Perímetro de evidências</span><b>{earnedCount}/3 posições sustentadas</b></div>
       <div className="gm-map-heading"><strong>Fortificações do argumento</strong><span>Proteja a hipótese com evidências e limites reconhecidos</span></div>
       <div className="gm-map-viewport" ref={viewport} tabIndex={0} role="region" aria-label="Mapa de defesa; deslize para explorar"><svg className="gm-map gm-defense-map" viewBox="0 0 560 270" role="img" aria-label={"Defesa, fase " + (step + 1) + " de 6. Posição em foco: " + names[target]}>
         <path className="gm-terrain" d="M16 220Q68 190 112 211T210 207T314 216T414 200T546 208V260H16Z" />
@@ -64,7 +66,7 @@ export function PreviewBoard({ kind, phase, route, decision, revised, answered, 
     const links = [[0,1],[0,2],[1,3],[1,4],[2,4],[2,5],[3,5],[4,5],[5,6]];
     const active = [0,1,3,5,5,6][step] ?? 0;
     return <section className="pv-board gm-board" data-board="territory" data-phase={step} aria-label="Mapa de territórios de conceitos">
-      <div className="pv-board-caption"><Flag size={16}/><span>Territórios conectados</span><b>{earnedCount} conexões demonstradas</b></div>
+      <div className="gm-world-art" aria-hidden="true"><ExperienceImage template={previewFormats[kind].name} /></div><div className="pv-board-caption"><Flag size={16}/><span>Territórios conectados</span><b>{earnedCount} conexões demonstradas</b></div>
       <div className="gm-map-heading"><strong>Rede de conceitos</strong><span>Expanda a partir da base por relações que a equipe explica</span></div>
       <div className="gm-map-viewport" ref={viewport} tabIndex={0} role="region" aria-label="Mapa de territórios; deslize para explorar"><svg className="gm-map gm-territory-map" viewBox="0 0 560 260" role="img" aria-label={"Mapa de conceitos, fase " + (step+1) + " de 6. Próxima fronteira: " + names[active]}>
         <path className="gm-terrain" d="M16 208Q120 187 212 207T396 204T544 192V254H16Z"/>
@@ -92,7 +94,7 @@ export function PreviewBoard({ kind, phase, route, decision, revised, answered, 
   const selectedRoute = route === 1 ? branch : primary;
   const marker = nodes[current];
   return <section className="pv-board gm-board" data-board="expedition" data-phase={step}>
-    <div className="pv-board-caption"><Search size={16}/><span>Rota de investigação</span><b>{route === null ? "Escolha uma rota" : route === 0 ? "Rota de campo" : "Rota de análise"}</b></div>
+    <div className="gm-world-art" aria-hidden="true"><ExperienceImage template={previewFormats[kind].name} /></div><div className="pv-board-caption"><Search size={16}/><span>Rota de investigação</span><b>{route === null ? "Escolha uma rota" : route === 0 ? "Rota de campo" : "Rota de análise"}</b></div>
     <div className="gm-map-heading"><strong>Expedição de campo</strong><span>Partida · indício · hipótese · síntese</span></div>
     <div className="gm-map-viewport" ref={viewport} tabIndex={0} role="region" aria-label="Rota de investigação; deslize para explorar"><svg className="gm-map gm-expedition-map" viewBox="0 0 560 270" role="img" aria-label={"Expedição, etapa " + (current+1) + " de 4. " + (route === null ? "A rota aguarda escolha." : route === 0 ? "Rota de campo selecionada." : "Rota de análise selecionada.")}>
       <path className="gm-route-bed" d={primary}/>
@@ -100,7 +102,7 @@ export function PreviewBoard({ kind, phase, route, decision, revised, answered, 
       <motion.path className="gm-route-progress" d={selectedRoute} initial={false} animate={{ pathLength: Math.min(current/3,1) }} transition={transition}/>
       <path className="gm-guide" d="M25 220H530"/>
       {nodes.map(([x,y],i) => <g key={i} className={"gm-checkpoint " + (i < current ? "is-earned " : "") + (i === current ? "is-current" : "")}>
-        <circle className="gm-checkpoint-ring" cx={x} cy={y} r="23"/><circle className="gm-checkpoint-core" cx={x} cy={y} r="14"/>
+        <motion.circle className="gm-checkpoint-ring" cx={x} cy={y} r="23" initial={false} animate={{ r: i === current ? 29 : 23 }} transition={transition} /><circle className="gm-checkpoint-core" cx={x} cy={y} r="14"/>
         <text className="gm-checkpoint-number" x={x} y={y+4} textAnchor="middle">{i < current ? "✓" : i+1}</text>
         <text className="gm-label" x={x} y={y+44} textAnchor="middle">{["Partida","Indício","Hipótese","Síntese"][i]}</text>
         <text className="gm-state" x={x} y={y+59} textAnchor="middle">{i < current ? "VISITADO" : i === current ? "VOCÊ ESTÁ AQUI" : "CHECKPOINT"}</text>
@@ -115,10 +117,11 @@ export function PreviewBoard({ kind, phase, route, decision, revised, answered, 
 }
 
 export function PreviewRuleCards({ kind }: { kind: ExperienceKind }) {
+  const reduce = useReducedMotion();
   const entries: Array<[LucideIcon, string, string]> = kind === "expedition" ? [[Search,"Investigue","Leia indícios antes de escolher uma rota."],[Flag,"Decida","Cada investimento muda os recursos disponíveis."],[Check,"Reflita","Explique como a evidência mudou a hipótese."]]
     : kind === "defense" ? [[ShieldCheck,"Formule","Construa uma afirmação que possa ser testada."],[Search,"Confronte","Procure evidências e possíveis contraprovas."],[Check,"Reconstrua","Reconheça limites e revise o argumento."]]
     : [[Flag,"Explore","Escolha uma área conectada à base."],[Search,"Aplique","Demonstre o conceito com um exemplo."],[Check,"Conecte","Negocie conexões com argumentos."]];
-  return <div className="pv-rule-cards">{entries.map(([Icon,title,detail]) => <div key={title}><Icon size={18}/><b>{title}</b><p>{detail}</p></div>)}</div>;
+  return <div className="pv-rule-cards">{entries.map(([Icon,title,detail]) => <motion.div key={title} initial={reduce ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .3, delay: reduce ? 0 : entries.findIndex(entry => entry[1] === title) * .07 }}><Icon size={18}/><b>{title}</b><p>{detail}</p></motion.div>)}</div>;
 }
 
 

@@ -1,0 +1,83 @@
+﻿/* Game arenas: mission state, meaningful progress and tactical choices. */
+.pv-workbench { --arena-night:#0c1e38; }
+.pv-stage { border:1px solid #c4cedd; border-radius:22px; box-shadow:0 18px 44px #0b244015; overflow:hidden; }
+.pv-stage-top { padding:24px 26px; background:#0b1d38; color:#fff; }
+.pv-stage-top h2 { color:#fff; font-size:clamp(21px,2.4vw,31px); letter-spacing:-1px; }
+.pv-stage-top .pv-eyebrow { color:#b7c9df; }
+.pv-stage-emblem { background:#dfff4f; color:#10223e; width:52px; height:52px; border-radius:16px; transform:rotate(-7deg); }
+.pv-simulation-tag { background:#263b55; border-color:#4c617b; color:#e4edf7; }
+.pv-stage-strip { background:#162c48; color:#d8e5f4; border:0; padding:11px 26px; }
+.pv-stage-strip b { color:#dfff4f; }
+.pv-mission-hud { display:grid; grid-template-columns:1.2fr 1fr 1fr; background:#0b1d38; color:white; padding:20px 26px; gap:20px; }
+.pv-mission-hud>div { border-right:1px solid #ffffff20; }
+.pv-mission-hud>div:last-child { border:0; }
+.pv-mission-hud span { display:block; color:#aabed6; font-size:10px; line-height:1.5; margin-bottom:5px; }
+.pv-mission-hud strong { font:750 clamp(18px,2vw,27px)/1.1 var(--font-body); letter-spacing:-.6px; }
+.pv-mission-hud small { color:#aabed6; font-size:15px; }
+.pv-mission-progress { height:5px; overflow:hidden; background:#243c59; }
+.pv-mission-progress>span { display:block; height:100%; width:100%; background:#dfff4f; transform-origin:left; }
+.pv-stage .gm-board { position:relative; isolation:isolate; margin:0; border:0; border-radius:0; padding:22px 26px 16px; --gm-ink:#f1f6ff; --gm-muted:#c5d8ec; --gm-line:#b5d3e34d; --pv-accent:#dfff4f; --pv-tint:#172d43; background:#102741; color:#f1f6ff; }
+.gm-world-art { position:absolute; inset:0; z-index:-2; pointer-events:none; }
+.gm-world-art img { width:100%; height:100%; object-fit:cover; opacity:.28; filter:saturate(.75); }
+.gm-world-art:after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,#0b203de8,#0e244175 65%,#0b203dbe); }
+.gm-board .pv-board-caption { color:#d5e3f5; }
+.gm-board .pv-board-caption b { color:#dfff4f; background:#122a40; border:1px solid #c6ed5c50; border-radius:5px; padding:5px 9px; }
+.gm-board .gm-map-heading strong { color:white; font-size:19px; letter-spacing:-.5px; }
+.gm-board .gm-map-heading span { color:#c5d8ec; }
+.gm-board .gm-map-viewport { margin-top:10px; background:#081a329e; border:1px solid #c7e4f32b; border-radius:14px; }
+.gm-board .gm-label { fill:#f0f5ff; }
+.gm-board .gm-state,.gm-board .gm-small { fill:#b8cde4; }
+.gm-board .gm-checkpoint-ring,.gm-board .gm-fortress,.gm-board .gm-hex { fill:#1b3852; stroke:#9bb4cf; }
+.gm-board .gm-checkpoint-core,.gm-board .gm-post-mark { fill:#10253e; }
+.gm-board .gm-checkpoint.is-current .gm-checkpoint-ring,.gm-board .gm-fort.is-current .gm-fortress,.gm-board .gm-territory.is-current .gm-hex { stroke:#dfff4f; }
+.gm-board .gm-checkpoint.is-earned .gm-checkpoint-core,.gm-board .gm-territory.is-earned .gm-hex,.gm-board .gm-fort.is-earned .gm-fortress { fill:#668329; }
+.gm-board .gm-legend { padding-top:14px; color:#cee0f3; }
+.pv-phase-body { padding:28px; background:#fff; }
+.pv-phase-heading h3 { font-size:clamp(23px,2.5vw,32px); line-height:1.2; letter-spacing:-.8px; max-width:650px; }
+.pv-choices label { position:relative; min-height:85px; padding:17px; border-radius:13px; border:1px solid #c9d4e3; background:#f5f7fc; gap:13px; box-shadow:0 3px 0 #dce3ee; }
+.pv-choice-letter { flex:0 0 34px; display:grid; place-items:center; height:34px; border-radius:9px; background:#e2e9f5; color:#324d72; font-size:15px; font-weight:800; }
+.pv-choices label.is-selected { border-color:#2855ff; background:#edf1ff; box-shadow:0 4px 0 #2855ff; }
+.pv-choices label.is-selected .pv-choice-letter { background:#2855ff; color:white; }
+.pv-choices label>button { position:absolute; opacity:0; width:1px; height:1px; }
+.pv-choices label:has(:focus-visible) { outline:3px solid #2855ff; outline-offset:5px; }
+.pv-choice-check { margin-left:auto; flex-shrink:0; color:#2855ff; }
+.pv-feedback { margin-top:20px; padding:19px; border-left:5px solid #11825f; background:#e8f7ef; border-radius:12px; }
+.pv-feedback.is-caution { border-left-color:#ac5723; background:#fff2e4; }
+.pv-result-grid>div:first-child { background:#102741; color:white; border:0; }
+.pv-result-grid>div:first-child b { color:#dfff4f; font-size:40px; letter-spacing:-1.5px; }
+.pv-result-grid>div:first-child span,.pv-result-grid>div:first-child small { color:#c9daec; }
+.pv-rule-cards>div { border-radius:12px; border:0; border-top:4px solid #b7c8ff; background:#edf1ff; }
+.pv-rule-cards>div:nth-child(2) { background:#f1f6db; border-top-color:#c6db63; }
+.pv-rule-cards>div:nth-child(3) { background:#f1edfc; border-top-color:#bba4ee; }
+.pv-stage-footer { padding:20px 26px; background:#f0f4fa; border-top:1px solid #d6dfec; }
+.pv-format { position:relative; isolation:isolate; overflow:hidden; min-height:92px; border-radius:12px; background:#0b203d; color:white; }
+.pv-format-art { position:absolute; z-index:-2; inset:0; width:100%; height:100%; object-fit:cover; opacity:.4; }
+.pv-format:after { content:""; position:absolute; z-index:-1; inset:0; background:linear-gradient(90deg,#0b203df0,#0b203d55); }
+.pv-format span b { color:white; }
+.pv-format span small { color:#d0e0f3; }
+.pv-format.is-selected { background:#0b203d; outline:2px solid #2855ff; outline-offset:2px; }
+.se-experience-options { gap:20px; }
+.se-experience-option { border:0; background:#102741; color:white; box-shadow:0 6px 0 #0b1e36; }
+.se-experience-option.is-selected { background:#102741; box-shadow:0 6px 0 #2855ff,inset 0 0 0 2px #2855ff; }
+.se-experience-art { padding:0!important; overflow:hidden; }
+.se-experience-option .se-experience-illustration { width:100%; height:210px; object-fit:cover; border-radius:0; transition:transform .45s cubic-bezier(.22,1,.36,1); }
+.se-experience-option:hover .se-experience-illustration { transform:scale(1.04); }
+.se-experience-option.is-selected .se-experience-illustration { height:270px; transform:none; }
+.se-experience-option .se-experience-option-top { padding:15px 18px; }
+.se-experience-option .se-experience-option-top>span { color:#dfff4f; }
+.se-experience-option .se-experience-copy { padding:20px; }
+.se-experience-option .se-experience-copy strong { color:white; font-size:20px; line-height:1.2; }
+.se-experience-option .se-experience-copy p { color:#c3d4e9; }
+.se-experience-option .se-experience-current { color:#dfff4f; }
+.se-experience-option .se-experience-option-footer { background:#0a1e36; border-color:#ffffff1a; padding:14px 18px; }
+.se-experience-option .se-experience-option-footer>span:first-child { color:#b7cce3; }
+.se-experience-option .se-experience-selection { color:#dfff4f; }
+@media(max-width:700px) { .pv-mission-hud { padding:17px; gap:10px; }.pv-mission-hud span { font-size:9px; }.pv-mission-hud strong { font-size:18px; }.pv-stage .gm-board,.pv-phase-body { padding:18px; }.pv-stage-top { padding:20px; }.pv-stage-strip { padding:10px 18px; }.pv-mission-hud>div { padding-right:6px; }.pv-choices label { padding:13px; }.se-experience-option .se-experience-illustration,.se-experience-option.is-selected .se-experience-illustration { height:100%; min-height:160px; }.se-experience-option.is-selected .se-experience-copy strong { font-size:20px; } }
+@media(prefers-reduced-motion:reduce) { .se-experience-option .se-experience-illustration { transition:none; }.se-experience-option:hover .se-experience-illustration { transform:none; } }
+.pv-phase-control { border:0; padding:18px; background:#e8edf6; box-shadow:none; }
+.pv-phase-control .pv-phase-list button { position:relative; border:0; border-radius:10px; padding:12px 9px; background:#ffffff8a; min-height:89px; }
+.pv-phase-control .pv-phase-list button.is-active { background:#2855ff; color:white; box-shadow:0 5px 0 #1535b4; }
+.pv-phase-control .pv-phase-list button.is-active small { color:#d7e0ff; }
+.pv-phase-control .pv-phase-list button.is-active .pv-phase-number { background:#dfff4f; color:#152544; }
+.pv-phase-control .pv-phase-list button.is-visited .pv-phase-number { display:grid; place-items:center; background:#d7ecc8; color:#346522; }
+.pv-phase-control .pv-current-dot { position:absolute; bottom:8px; right:8px; background:#dfff4f; }

@@ -1,0 +1,90 @@
+/* A working collection: covers lift, filters rearrange the shelf, evidence leads. */
+.journey-app .j-editorial-library .discovery-shelf{grid-template-columns:minmax(230px,.85fr) 2fr;overflow:visible;border:0;background:transparent;gap:28px;margin:8px 0 36px;border-radius:0}
+.journey-app .discovery-shelf-intro{background:transparent;color:var(--color-ink);padding:24px 0;gap:14px;justify-content:center}
+.journey-app .discovery-shelf-intro>.j-eyebrow{color:var(--color-action);font-size:10px}
+.journey-app .discovery-shelf-intro>svg{display:none}
+.journey-app .discovery-shelf-intro h2{font-size:clamp(30px,3vw,46px);line-height:1.06;letter-spacing:-1.8px;font-weight:700}
+.journey-app .discovery-shelf-intro h2 em{font-style:normal;color:var(--color-action)}
+.journey-app .discovery-shelf-intro p{color:var(--color-muted);font-size:12px;max-width:28ch}
+.journey-app .discovery-collections{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:center;padding:14px 4px}
+.journey-app .discovery-collection{min-height:250px;position:relative;padding:22px 18px;border:1px solid rgb(16 32 68 / 12%);border-radius:6px 18px 18px 6px;box-shadow:-5px 5px 0 rgb(16 32 68 / 7%);text-align:left;transform-origin:bottom center;display:flex;flex-direction:column;align-items:flex-start;gap:16px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.journey-app .discovery-collection:before{content:"";position:absolute;inset:0 auto 0 7px;width:1px;background:rgb(16 32 68 / 13%)}
+.journey-app .discovery-collection:after{content:"";position:absolute;width:130px;height:130px;border:1px solid currentColor;border-radius:50%;right:-65px;top:36px;opacity:.15;box-shadow:0 0 0 20px rgb(255 255 255 / 15%),0 0 0 40px rgb(255 255 255 / 15%);pointer-events:none}
+.journey-app .discovery-collection:nth-child(2){margin-top:28px}
+.journey-app .discovery-collection:nth-child(3){margin-top:-12px}
+.journey-app .discovery-collection strong{font-size:clamp(48px,5vw,76px);font-weight:600;line-height:.9;letter-spacing:-5px;margin-top:6px}
+.journey-app .discovery-collection>span{font-size:16px;font-weight:650;line-height:1.3;max-width:13ch}
+.journey-app .discovery-collection small{width:100%;display:flex;justify-content:space-between;margin-top:auto;padding-top:14px;border-top:1px solid rgb(16 32 68 / 20%);font-size:11px}
+.journey-app .discovery-collection[aria-pressed=true]{border-color:var(--color-ink);box-shadow:-5px 5px 0 var(--color-ink)}
+.journey-app .discovery-collection:focus-visible{outline:3px solid var(--color-action);outline-offset:5px}
+.journey-app .discovery-pdf{background:#dfff4f;color:#102044}
+.journey-app .discovery-documento{background:#dcd2ff;color:#102044}
+.journey-app .discovery-slides{background:#ffb29e;color:#102044}
+.journey-app .j-editorial-library .library-controls{background:white;padding:12px;border:1px solid var(--color-line);border-radius:14px;gap:16px;display:flex;justify-content:space-between}
+.journey-app .library-filters button{transition:background .18s,color .18s,transform .18s;min-height:42px}
+.journey-app .library-filters button[aria-pressed=true]{background:var(--color-ink);color:white;box-shadow:none}
+.journey-app .discovery-collection-heading{display:flex;gap:12px;border-top:0;margin-top:32px;padding-top:0;align-items:baseline}
+.journey-app .discovery-collection-heading h2{font-size:25px;letter-spacing:-.8px;margin:0}
+.journey-app .discovery-section-index{font-size:12px;font-weight:700;color:var(--color-action);font-variant-numeric:tabular-nums}
+.journey-app .discovery-collection-heading [role=status]{margin-left:auto;font-size:12px;color:var(--color-muted)}
+.journey-app .j-editorial-library .library-grid{gap:22px}
+.journey-app .j-editorial-library .library-card{border-radius:14px;padding:16px;text-align:left;border:1px solid var(--color-line);box-shadow:none;overflow:hidden;position:relative;background:#fff;transition:border-color .2s,box-shadow .2s}
+.journey-app .j-editorial-library .library-card:hover,.journey-app .j-editorial-library .library-card:focus-visible{border-color:var(--color-action);box-shadow:0 12px 28px rgb(16 32 68 / 9%)}
+.journey-app .library-card .library-document{height:190px;margin:16px 0 20px;border-radius:6px;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:space-between;padding:22px;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.journey-app .library-card .library-document>svg{position:absolute;right:18px;top:18px;width:30px;opacity:.7;transition:transform .35s}
+.journey-app .library-card .discovery-cover-mark{font-size:100px;font-weight:600;line-height:.8;letter-spacing:-8px;transform:rotate(-9deg);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.journey-app .library-card .library-document>span:last-child{font-size:9px;letter-spacing:.14em;writing-mode:vertical-rl;align-self:flex-end}
+.journey-app .library-card:is(:hover,:focus-visible) .discovery-cover-mark{transform:translate(10px,-8px) rotate(0)}
+.journey-app .library-card:is(:hover,:focus-visible) .library-document>svg{transform:rotate(12deg) translateY(-3px)}
+.journey-app .j-material-pdf .library-document{background:#e8f0ff;color:#2855ff}
+.journey-app .j-material-documento .library-document{background:#e8e0ff;color:#5b36a8}
+.journey-app .j-material-slides .library-document{background:#ffe3d9;color:#a73f27}
+.journey-app .library-card h3{font-size:20px;line-height:1.25;letter-spacing:-.5px;overflow-wrap:anywhere}
+.journey-app .library-card-footer{border-top:1px solid var(--color-line);padding-top:14px;margin-top:18px;font-size:12px;font-weight:650}
+.journey-app .library-card-footer svg{transition:transform .2s}
+.journey-app .library-card:is(:hover,:focus-visible) .library-card-footer svg{transform:translate(4px,-4px)}
+.journey-app .j-evidence-lab .lab-source{border-left:3px solid var(--color-action);padding:8px 14px;gap:12px;display:flex;flex-wrap:wrap;align-items:center;font-size:12px;background:#edf1ff}
+.journey-app .j-evidence-lab .lab-filters{padding:20px 0;border:0;border-radius:0;background:transparent;gap:16px}
+.journey-app .j-evidence-lab .lab-filters label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em}
+.journey-app .j-evidence-lab .lab-filters select{background:#fff;min-height:44px;font-size:13px;letter-spacing:normal;text-transform:none}
+.journey-app .j-evidence-lab .j-result-metrics{border:0;border-radius:14px;grid-template-columns:1.5fr 1fr 1fr 1fr;margin:8px 0 26px;overflow:hidden}
+.journey-app .j-evidence-lab .j-result-metrics>div{padding:24px 20px;position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:190px;background:#fff}
+.journey-app .j-evidence-lab .j-result-metrics>div:first-child{background:#2855ff}
+.journey-app .j-evidence-lab .j-result-metrics>div:first-child strong{font-size:clamp(64px,7vw,94px);color:#dfff4f;letter-spacing:-5px;line-height:1}
+.journey-app .j-evidence-lab .j-result-metrics strong{font-size:44px;letter-spacing:-2px;line-height:1.1;margin-bottom:12px}
+.journey-app .j-evidence-lab .j-result-metrics strong small{font-size:18px;letter-spacing:-.4px}
+.journey-app .j-evidence-lab .j-result-metrics>div>svg{position:absolute;top:18px;right:18px;opacity:.65}
+.journey-app .j-evidence-lab .j-result-metrics>div>span{font-size:12px;font-weight:650;margin-bottom:6px}
+.journey-app .j-evidence-lab .j-result-metrics>div>small{font-size:11px;line-height:1.4}
+.journey-app .lab-discovery-insight{border:0;border-radius:0;background:#ffdfd5;padding:28px;position:relative;border-left:6px solid #ff826b}
+.journey-app .lab-insight-icon{width:70px;height:82px;background:transparent;color:#84371f;position:relative;flex:none;border-radius:0}
+.journey-app .lab-insight-icon>svg{position:absolute;bottom:0;right:0;width:24px}
+.journey-app .lab-insight-icon>span{font-size:90px;font-weight:500;line-height:1;letter-spacing:-6px}
+.journey-app .lab-discovery-insight h2{font-size:clamp(23px,2.4vw,34px);letter-spacing:-1px;line-height:1.15}
+.journey-app .lab-discovery-insight p{font-size:13px;line-height:1.65}
+.journey-app .j-evidence-lab .lab-chart-grid{grid-template-columns:1.15fr 1fr;gap:24px;align-items:start}
+.journey-app .j-evidence-lab .j-result-panel{border-radius:14px;padding:26px;border:1px solid var(--color-line);box-shadow:none}
+.journey-app .j-evidence-lab .j-result-panel h2{font-size:clamp(25px,2.5vw,36px);line-height:1.1;letter-spacing:-1.2px;margin:14px 0 24px}
+.journey-app .j-evidence-lab .j-result-panel h2 em{font-style:normal;color:var(--color-action)}
+.journey-app .lab-chart-grid>.j-result-panel:nth-child(2){background:#e9f5f1}
+.journey-app .lab-chart-grid>.j-result-panel:nth-child(2) h2 em{color:#087b68}
+.journey-app .lab-objectives button{transition:background .2s,transform .2s;border-radius:8px}
+.journey-app .lab-objectives button:is(:hover,:focus-visible){background:#edf1ff;transform:translateX(4px)}
+.journey-app .j-evidence-lab .lab-gameplay{background:var(--color-ink);color:#fff;overflow:hidden;padding:32px}
+.journey-app .lab-gameplay>.j-eyebrow{color:#dfff4f}
+.journey-app .lab-gameplay h2 em{color:#dfff4f}
+.journey-app .lab-gameplay>p{color:#c9d3e8;max-width:70ch;font-size:13px;line-height:1.7}
+.journey-app .lab-team-board{display:grid;gap:14px;margin-top:32px}
+.journey-app .lab-gameplay .j-team-row{display:grid;grid-template-columns:50px 1fr auto;gap:10px 18px;border:0;background:rgb(255 255 255 / 6%);padding:20px;border-radius:10px;position:relative;overflow:hidden}
+.journey-app .lab-gameplay .j-team-row>span{grid-row:1/3;background:transparent;color:#a6b7d8;font-size:28px;width:auto;height:auto;font-weight:500;letter-spacing:-1px}
+.journey-app .lab-gameplay .j-team-row:first-child>span{background:transparent;color:#dfff4f}
+.journey-app .lab-gameplay .j-team-row>b{font-size:15px}
+.journey-app .lab-gameplay .j-team-row>strong{font-size:28px;letter-spacing:-1px;font-variant-numeric:tabular-nums;color:#dfff4f}
+.journey-app .lab-gameplay .j-team-row strong small{font-size:11px;letter-spacing:0;color:#c9d3e8}
+.journey-app .lab-team-track{height:6px;border-radius:4px;background:rgb(255 255 255 / 10%);grid-column:2/-1;overflow:hidden}
+.journey-app .lab-team-track>div{height:100%;background:#dfff4f;transform-origin:left;border-radius:4px}
+.journey-app .lab-gameplay .j-team-row:nth-child(2) .lab-team-track>div{background:#a98bff}
+.journey-app .lab-gameplay .j-team-row:nth-child(3) .lab-team-track>div{background:#ffb29e}
+@media(max-width:1100px){.journey-app .j-editorial-library .discovery-shelf{grid-template-columns:1fr}.journey-app .discovery-shelf-intro{display:block;padding:8px 0}.journey-app .discovery-shelf-intro h2{margin:12px 0}.journey-app .discovery-shelf-intro h2 br{display:none}.journey-app .discovery-shelf-intro p{max-width:none}.journey-app .j-evidence-lab .lab-chart-grid{grid-template-columns:1fr}.journey-app .j-evidence-lab .j-result-metrics{grid-template-columns:1.2fr 1fr}.journey-app .j-evidence-lab .j-result-metrics>div{min-height:160px}}
+@media(max-width:600px){.journey-app .discovery-collections{gap:8px;padding:8px 0}.journey-app .discovery-collection{min-height:210px;padding:18px 12px;gap:14px}.journey-app .discovery-collection strong{font-size:46px;letter-spacing:-3px}.journey-app .discovery-collection>span{font-size:12px}.journey-app .discovery-collection small{font-size:10px}.journey-app .discovery-collection>svg{width:20px}.journey-app .j-editorial-library .library-controls{display:block}.journey-app .discovery-collection-heading{flex-wrap:wrap;gap:8px}.journey-app .discovery-collection-heading [role=status]{margin-left:0;flex-basis:100%}.journey-app .j-evidence-lab .j-result-metrics>div{padding:20px 14px;min-height:152px}.journey-app .j-evidence-lab .j-result-metrics>div:first-child strong{font-size:66px}.journey-app .j-evidence-lab .j-result-metrics strong{font-size:36px}.journey-app .j-evidence-lab .j-result-metrics strong small{font-size:14px}.journey-app .lab-discovery-insight{padding:22px 18px;gap:12px}.journey-app .lab-insight-icon{width:42px;height:60px}.journey-app .lab-insight-icon>span{font-size:62px}.journey-app .j-evidence-lab .j-result-panel{padding:20px}.journey-app .lab-gameplay .j-team-row{grid-template-columns:30px 1fr auto;gap:10px;padding:16px}.journey-app .lab-gameplay .j-team-row>strong{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.journey-app .discovery-collection,.journey-app .library-filters button,.journey-app .library-card,.journey-app .library-card .library-document,.journey-app .library-card .discovery-cover-mark,.journey-app .library-card .library-document>svg,.journey-app .library-card-footer svg,.journey-app .lab-objectives button{transition:none}.journey-app .library-card:is(:hover,:focus-visible) .discovery-cover-mark{transform:rotate(-9deg)}.journey-app .library-card:is(:hover,:focus-visible) .library-document>svg,.journey-app .library-card:is(:hover,:focus-visible) .library-card-footer svg,.journey-app .lab-objectives button:is(:hover,:focus-visible){transform:none}}

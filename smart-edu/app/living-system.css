@@ -1,0 +1,75 @@
+/* Living Learning System: shared interaction language, scoped to the product. */
+.journey-app { --motion-quick:160ms; --motion-panel:320ms; --ease-response:cubic-bezier(.22,1,.36,1); }
+.journey-app .product-brand>span { background:var(--color-achievement); color:var(--color-ink); box-shadow:0 3px 0 #a7bc40; }
+.journey-app .product-global-nav a { position:relative; transition:color var(--motion-quick),background var(--motion-quick); }
+.journey-app .product-global-nav a[aria-current=page] { background:var(--color-ink); color:white; border-radius:10px; }
+.journey-app .product-global-nav a[aria-current=page]::after { content:""; position:absolute; bottom:5px; left:calc(50% - 2px); width:4px; height:4px; background:var(--color-achievement); border-radius:50%; }
+.journey-app .j-button { transition:transform var(--motion-quick) var(--ease-response),box-shadow var(--motion-quick),background var(--motion-quick); }
+.journey-app .j-button:active { transform:translateY(2px); box-shadow:none; }
+.journey-app :is(a,button,input,select,summary):focus-visible { outline:3px solid var(--color-action); outline-offset:4px; }
+.journey-app .j-home-hero :is(a,button):focus-visible { outline-color:var(--color-achievement); }
+.journey-app .j-home-hero { min-height:0; padding:30px clamp(24px,4vw,64px) 18px; background:var(--color-action); }
+.journey-app .j-home-hero-heading { min-height:280px; grid-template-columns:minmax(0,1fr) minmax(0,1fr); max-width:1240px; }
+.journey-app .j-home-hero-stage { height:280px; }
+.journey-app .j-home-hero-copy h1 { font-size:clamp(46px,5.2vw,74px); line-height:1; letter-spacing:-.055em; margin:16px 0 12px; text-shadow:none; }
+.journey-app .j-home-hero-copy h1 em { white-space:normal; }
+.journey-app .j-home-hero-copy>p { font-size:14px; max-width:38ch; margin-bottom:18px; }
+.journey-app .j-home-hero-copy .j-button { background:var(--color-achievement); border-color:var(--color-achievement); }
+.journey-app .j-floating-card-mission { top:15px; width:245px; }
+.journey-app .j-floating-card-team { bottom:0; }
+.journey-app .j-floating-streak { top:15px; right:0; }
+.j-mission-selector { max-width:1240px; margin:22px auto 12px; padding:16px 18px 0; border:1px solid #ffffff40; border-radius:16px; background:#081a4226; }
+.j-mission-stops { display:flex; justify-content:space-between; gap:10px; }
+.j-mission-stops button { position:relative; flex:1; min-width:0; padding:0 0 12px; display:grid; justify-items:center; gap:8px; color:#e4ebff; text-align:center; border-bottom:2px solid transparent; transition:border-color 160ms,color 160ms; }
+.j-mission-stops button>span { position:relative; z-index:1; width:34px; height:34px; display:grid; place-items:center; background:#284cd2; border:1px solid #ffffff70; border-radius:11px; font-size:12px; font-weight:750; transition:transform 180ms,background 180ms; }
+.j-mission-stops button:not(:last-child)::after { content:""; position:absolute; top:16px; left:calc(50% + 22px); width:calc(100% - 34px); height:1px; background:#ffffff40; }
+.j-mission-stops button.is-complete>span { background:var(--color-achievement); color:var(--color-ink); border-color:var(--color-achievement); }
+.j-mission-stops button[aria-pressed=true] { border-color:var(--color-achievement); color:white; }
+.j-mission-stops button[aria-pressed=true]>span { box-shadow:0 0 0 4px #ffffff25; transform:translateY(-3px); }
+.j-mission-stops small { font-size:11px; line-height:1.4; max-width:17ch; }
+.j-mission-context { display:flex; gap:16px; justify-content:space-between; align-items:center; padding:13px 0; border-top:1px solid #ffffff20; }
+.j-mission-context>span { display:grid; gap:3px; }
+.j-mission-context small { font-size:9px; letter-spacing:1px; color:#d5dfff; }
+.j-mission-context b { font-size:14px; }
+.j-mission-context a { display:flex; align-items:center; gap:7px; font-size:12px; font-weight:700; color:var(--color-achievement); }
+.journey-app .j-hero-bottom { padding-top:12px; }
+.journey-app .j-hero-checkpoints i.is-current { animation:none; background:var(--color-achievement); }
+.journey-app .cockpit-action { background:var(--color-ink); color:white; border-color:var(--color-ink); position:relative; overflow:hidden; }
+.journey-app .cockpit-action h2 { color:white; font-size:clamp(25px,2.4vw,35px); letter-spacing:-.035em; line-height:1.18; max-width:20ch; }
+.journey-app .cockpit-action p,.journey-app .cockpit-meta { color:#d0dcf3; }
+.journey-app .cockpit-action .j-progress-label { color:#d0dcf3; }
+.journey-app .cockpit-action .j-button { background:var(--color-achievement); color:var(--color-ink); border-color:var(--color-achievement); }
+.journey-app .cockpit-action .j-progress :is(span,small,b) { color:#e2ebff; }
+.journey-app .j-cockpit>section,.journey-app .cockpit-top { animation:living-arrive 420ms var(--ease-response) both; }
+.journey-app .j-cockpit>section:nth-child(2) { animation-delay:60ms; }
+.journey-app .j-cockpit>section:nth-child(3) { animation-delay:110ms; }
+@keyframes living-arrive { from { opacity:.6; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+.journey-app .cockpit-map { background:#eee9ff; border-color:#d7cbfa; }
+.journey-app .cockpit-map h2 { letter-spacing:-.035em; }
+.journey-app .cockpit-checkpoints a { text-decoration:none; border-radius:8px; padding:7px; transition:background 160ms; }
+.journey-app .cockpit-checkpoints a:hover { background:#ffffffa0; }
+.journey-app .cockpit-evidence { background:#d9f4ec; border-color:#abdacb; }
+.journey-app .cockpit-evidence strong { font-size:clamp(32px,3vw,46px); letter-spacing:-.05em; }
+.journey-app .cockpit-classes>a { padding:20px 16px; border:1px solid var(--color-line); border-left:4px solid var(--color-action); margin-top:10px; border-radius:12px; background:white; transition:transform 180ms,box-shadow 180ms; }
+.journey-app .cockpit-classes>a:nth-of-type(2) { border-left-color:var(--color-discovery); }
+.journey-app .cockpit-classes>a:nth-of-type(3) { border-left-color:var(--color-success); }
+@media(hover:hover) { .journey-app .cockpit-classes>a:hover { transform:translateX(4px); box-shadow:0 6px 20px #081a420a; } .j-mission-stops button:hover>span { transform:translateY(-3px); } }
+@media(max-width:1000px) { .journey-app .j-home-hero-heading { grid-template-columns:minmax(0,1fr) minmax(0,.9fr); } .journey-app .j-floating-streak { display:none; } .journey-app .j-floating-card-mission { width:215px; } }
+@media(max-width:760px) {
+ .journey-app .j-home-hero { padding:25px 20px 16px; }
+ .journey-app .j-home-hero-heading { display:block; min-height:0; }
+ .journey-app .j-home-hero-copy h1 { font-size:clamp(44px,10.5vw,66px); line-height:1; width:auto; }
+ .journey-app .j-home-hero-copy h1 em>span { display:inline; line-height:inherit; }
+ .journey-app .j-home-hero-stage { display:none; }
+ .j-mission-selector { padding:14px 12px 0; margin-top:20px; }
+ .j-mission-stops { gap:7px; }
+ .j-mission-stops button>span { width:30px; height:30px; border-radius:9px; }
+ .j-mission-stops button:not(:last-child)::after { top:15px; left:calc(50% + 18px); width:calc(100% - 26px); }
+ .j-mission-stops small { display:none; }
+ .j-mission-context { align-items:start; }
+ .j-mission-context a { font-size:11px; max-width:110px; flex-shrink:0; }
+ .j-mission-context b { font-size:13px; }
+ .j-mission-context small { font-size:8px; letter-spacing:.5px; }
+ .journey-app .j-hero-bottom>span { font-size:9px; }
+}
+@media(prefers-reduced-motion:reduce) { .journey-app *, .journey-app *::before, .journey-app *::after { scroll-behavior:auto!important; animation:none!important; transition-duration:0ms!important; } }

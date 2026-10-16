@@ -5,17 +5,22 @@
 :root {
   color-scheme: light;
   /* One semantic source of truth shared by all active route families. */
-  --color-ink: #091b3a;
-  --color-text: #0b1933;
+  --color-ink: #081a42;
+  --color-text: #102044;
   --color-muted: #52627a;
   --color-neutral-soft: #edf1f7;
-  --color-canvas: #f5f7fc;
+  --color-canvas: #f4f6fc;
   --color-surface: #ffffff;
   --color-line: #dce3ef;
-  --color-action: #2557f5;
+  --color-action: #2855ff;
   --color-action-strong: #193bb8;
   --color-action-dark: var(--color-action-strong);
-  --color-focus: #2557f5;
+  --color-focus: var(--color-action);
+  --color-on-dark: #ffffff;
+  --color-on-accent: var(--color-ink);
+  --color-control-line: #75839b;
+  --color-lavender: #a98bff;
+  --color-teal: #29c5ad;
   --color-success: #216344;
   --color-success-soft: #dff2e8;
   --color-success-strong: #216344;
@@ -26,27 +31,31 @@
   --color-discovery: #654090;
   --color-discovery-soft: #e8ddf8;
   --color-discovery-strong: #654090;
-  --color-achievement: #ddf45a;
+  --color-achievement: #dfff4f;
   --color-sky-soft: #cfe2ff;
   --color-electric: #3984ff;
   --color-purple: #8a63e8;
   --color-mint: #bfead7;
-  --color-coral: #ff795b;
+  --color-coral: #ff826b;
 
   --font-body: "Studio Sans", Arial, sans-serif;
   --font-display: "Studio Display", Georgia, serif;
   --font-hand: "Studio Hand", cursive;
-  --type-body: 15px;
-  --type-support: 13px;
+  --font-heading: var(--font-body);
+  --type-body: clamp(.9375rem, .9rem + .15vw, 1rem);
+  --type-support: .875rem;
   --type-caption: 12px;
-  --type-label: 11px;
-  --type-title: 40px;
-  --type-display: clamp(2.5rem, 5vw, 3.875rem);
+  --type-label: .75rem;
+  --type-title: clamp(1.875rem, 1.35rem + 2vw, 2.75rem);
+  --type-section: clamp(1.375rem, 1.1rem + 1vw, 1.875rem);
+  --type-display: clamp(2.5rem, 1.7rem + 3vw, 4.5rem);
+  --measure-reading: 65ch;
 
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
+  --space-5: 20px;
   --space-6: 24px;
   --space-8: 32px;
   --space-12: 48px;
@@ -56,8 +65,14 @@
   --radius-surface: 16px;
   --radius-pill: 999px;
   --shadow-surface: 0 6px 24px #091b3a0b;
+  --surface-raised: var(--color-surface);
+  --surface-subtle: var(--color-neutral-soft);
+  --surface-inverse: var(--color-ink);
   --motion-micro: 160ms;
-  --motion-state: 240ms;
+  --motion-selection: 200ms;
+  --motion-expansion: 300ms;
+  --motion-panel: 360ms;
+  --motion-state: var(--motion-selection);
   --motion-context: 280ms;
   --motion-ease: cubic-bezier(.22, 1, .36, 1);
 

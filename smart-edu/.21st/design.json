@@ -1,0 +1,667 @@
+{
+  "version": 1,
+  "project": {
+    "name": "site-creator-vinext-starter",
+    "productType": null,
+    "stack": [
+      "nextjs",
+      "react",
+      "shadcn",
+      "tailwind-v4",
+      "vite"
+    ]
+  },
+  "sources": {
+    "tokens": [
+      "app/globals.css"
+    ],
+    "components": [
+      "components/ui"
+    ],
+    "assets": [],
+    "instructions": [
+      "AGENTS.md"
+    ]
+  },
+  "design": {
+    "colorMode": "light",
+    "colors": {
+      "--color-ink": {
+        "value": "#081a42",
+        "source": "app/globals.css"
+      },
+      "--color-text": {
+        "value": "#102044",
+        "source": "app/globals.css"
+      },
+      "--color-muted": {
+        "value": "var(--muted)",
+        "source": "app/globals.css"
+      },
+      "--color-neutral-soft": {
+        "value": "#edf1f7",
+        "source": "app/globals.css"
+      },
+      "--color-canvas": {
+        "value": "#f4f6fc",
+        "source": "app/globals.css"
+      },
+      "--color-surface": {
+        "value": "#ffffff",
+        "source": "app/globals.css"
+      },
+      "--color-line": {
+        "value": "#dce3ef",
+        "source": "app/globals.css"
+      },
+      "--color-action": {
+        "value": "#2855ff",
+        "source": "app/globals.css"
+      },
+      "--color-action-strong": {
+        "value": "#193bb8",
+        "source": "app/globals.css"
+      },
+      "--color-action-dark": {
+        "value": "var(--color-action-strong)",
+        "source": "app/globals.css"
+      },
+      "--color-focus": {
+        "value": "var(--color-action)",
+        "source": "app/globals.css"
+      },
+      "--color-on-dark": {
+        "value": "#ffffff",
+        "source": "app/globals.css"
+      },
+      "--color-on-accent": {
+        "value": "var(--color-ink)",
+        "source": "app/globals.css"
+      },
+      "--color-control-line": {
+        "value": "#75839b",
+        "source": "app/globals.css"
+      },
+      "--color-lavender": {
+        "value": "#a98bff",
+        "source": "app/globals.css"
+      },
+      "--color-teal": {
+        "value": "#29c5ad",
+        "source": "app/globals.css"
+      },
+      "--color-success": {
+        "value": "#216344",
+        "source": "app/globals.css"
+      },
+      "--color-success-soft": {
+        "value": "#dff2e8",
+        "source": "app/globals.css"
+      },
+      "--color-success-strong": {
+        "value": "#216344",
+        "source": "app/globals.css"
+      },
+      "--color-attention": {
+        "value": "#943d24",
+        "source": "app/globals.css"
+      },
+      "--color-attention-soft": {
+        "value": "#ffe1cb",
+        "source": "app/globals.css"
+      },
+      "--color-attention-strong": {
+        "value": "#943d24",
+        "source": "app/globals.css"
+      },
+      "--color-error": {
+        "value": "#a63838",
+        "source": "app/globals.css"
+      },
+      "--color-discovery": {
+        "value": "#654090",
+        "source": "app/globals.css"
+      },
+      "--color-discovery-soft": {
+        "value": "#e8ddf8",
+        "source": "app/globals.css"
+      },
+      "--color-discovery-strong": {
+        "value": "#654090",
+        "source": "app/globals.css"
+      },
+      "--color-achievement": {
+        "value": "#dfff4f",
+        "source": "app/globals.css"
+      },
+      "--color-sky-soft": {
+        "value": "#cfe2ff",
+        "source": "app/globals.css"
+      },
+      "--color-electric": {
+        "value": "#3984ff",
+        "source": "app/globals.css"
+      },
+      "--color-purple": {
+        "value": "#8a63e8",
+        "source": "app/globals.css"
+      },
+      "--color-mint": {
+        "value": "#bfead7",
+        "source": "app/globals.css"
+      },
+      "--color-coral": {
+        "value": "#ff826b",
+        "source": "app/globals.css"
+      },
+      "--background": {
+        "value": "var(--color-canvas)",
+        "source": "app/globals.css"
+      },
+      "--foreground": {
+        "value": "var(--color-text)",
+        "source": "app/globals.css"
+      },
+      "--card-foreground": {
+        "value": "var(--color-text)",
+        "source": "app/globals.css"
+      },
+      "--popover-foreground": {
+        "value": "var(--color-text)",
+        "source": "app/globals.css"
+      },
+      "--primary": {
+        "value": "var(--color-action)",
+        "source": "app/globals.css"
+      },
+      "--primary-foreground": {
+        "value": "#ffffff",
+        "source": "app/globals.css"
+      },
+      "--secondary": {
+        "value": "var(--color-sky-soft)",
+        "source": "app/globals.css"
+      },
+      "--secondary-foreground": {
+        "value": "var(--color-ink)",
+        "source": "app/globals.css"
+      },
+      "--muted": {
+        "value": "var(--color-neutral-soft)",
+        "source": "app/globals.css"
+      },
+      "--muted-foreground": {
+        "value": "var(--color-muted)",
+        "source": "app/globals.css"
+      },
+      "--accent": {
+        "value": "var(--color-discovery-soft)",
+        "source": "app/globals.css"
+      },
+      "--accent-foreground": {
+        "value": "var(--color-discovery)",
+        "source": "app/globals.css"
+      },
+      "--destructive": {
+        "value": "var(--color-error)",
+        "source": "app/globals.css"
+      },
+      "--border": {
+        "value": "var(--color-line)",
+        "source": "app/globals.css"
+      },
+      "--ring": {
+        "value": "var(--color-focus)",
+        "source": "app/globals.css"
+      },
+      "--chart-1": {
+        "value": "var(--color-action)",
+        "source": "app/globals.css"
+      },
+      "--chart-2": {
+        "value": "var(--color-success)",
+        "source": "app/globals.css"
+      },
+      "--chart-3": {
+        "value": "var(--color-attention)",
+        "source": "app/globals.css"
+      },
+      "--chart-4": {
+        "value": "var(--color-discovery)",
+        "source": "app/globals.css"
+      },
+      "--chart-5": {
+        "value": "var(--color-coral)",
+        "source": "app/globals.css"
+      },
+      "--sidebar-foreground": {
+        "value": "var(--color-text)",
+        "source": "app/globals.css"
+      },
+      "--sidebar-primary": {
+        "value": "var(--color-action)",
+        "source": "app/globals.css"
+      },
+      "--sidebar-primary-foreground": {
+        "value": "#ffffff",
+        "source": "app/globals.css"
+      },
+      "--sidebar-accent": {
+        "value": "var(--color-discovery-soft)",
+        "source": "app/globals.css"
+      },
+      "--sidebar-accent-foreground": {
+        "value": "var(--color-discovery)",
+        "source": "app/globals.css"
+      },
+      "--sidebar-border": {
+        "value": "var(--color-line)",
+        "source": "app/globals.css"
+      },
+      "--sidebar-ring": {
+        "value": "var(--color-focus)",
+        "source": "app/globals.css"
+      },
+      "--color-background": {
+        "value": "var(--background)",
+        "source": "app/globals.css"
+      },
+      "--color-foreground": {
+        "value": "var(--foreground)",
+        "source": "app/globals.css"
+      },
+      "--color-card": {
+        "value": "var(--card)",
+        "source": "app/globals.css"
+      },
+      "--color-card-foreground": {
+        "value": "var(--card-foreground)",
+        "source": "app/globals.css"
+      },
+      "--color-popover": {
+        "value": "var(--popover)",
+        "source": "app/globals.css"
+      },
+      "--color-popover-foreground": {
+        "value": "var(--popover-foreground)",
+        "source": "app/globals.css"
+      },
+      "--color-primary": {
+        "value": "var(--primary)",
+        "source": "app/globals.css"
+      },
+      "--color-primary-foreground": {
+        "value": "var(--primary-foreground)",
+        "source": "app/globals.css"
+      },
+      "--color-secondary": {
+        "value": "var(--secondary)",
+        "source": "app/globals.css"
+      },
+      "--color-secondary-foreground": {
+        "value": "var(--secondary-foreground)",
+        "source": "app/globals.css"
+      },
+      "--color-muted-foreground": {
+        "value": "var(--muted-foreground)",
+        "source": "app/globals.css"
+      },
+      "--color-accent": {
+        "value": "var(--accent)",
+        "source": "app/globals.css"
+      },
+      "--color-accent-foreground": {
+        "value": "var(--accent-foreground)",
+        "source": "app/globals.css"
+      },
+      "--color-destructive": {
+        "value": "var(--destructive)",
+        "source": "app/globals.css"
+      },
+      "--color-border": {
+        "value": "var(--border)",
+        "source": "app/globals.css"
+      },
+      "--color-input": {
+        "value": "var(--input)",
+        "source": "app/globals.css"
+      },
+      "--color-ring": {
+        "value": "var(--ring)",
+        "source": "app/globals.css"
+      },
+      "--color-chart-1": {
+        "value": "var(--chart-1)",
+        "source": "app/globals.css"
+      },
+      "--color-chart-2": {
+        "value": "var(--chart-2)",
+        "source": "app/globals.css"
+      },
+      "--color-chart-3": {
+        "value": "var(--chart-3)",
+        "source": "app/globals.css"
+      },
+      "--color-chart-4": {
+        "value": "var(--chart-4)",
+        "source": "app/globals.css"
+      },
+      "--color-chart-5": {
+        "value": "var(--chart-5)",
+        "source": "app/globals.css"
+      },
+      "--color-sidebar": {
+        "value": "var(--sidebar)",
+        "source": "app/globals.css"
+      },
+      "--color-sidebar-foreground": {
+        "value": "var(--sidebar-foreground)",
+        "source": "app/globals.css"
+      },
+      "--color-sidebar-primary": {
+        "value": "var(--sidebar-primary)",
+        "source": "app/globals.css"
+      },
+      "--color-sidebar-primary-foreground": {
+        "value": "var(--sidebar-primary-foreground)",
+        "source": "app/globals.css"
+      },
+      "--color-sidebar-accent": {
+        "value": "var(--sidebar-accent)",
+        "source": "app/globals.css"
+      },
+      "--color-sidebar-accent-foreground": {
+        "value": "var(--sidebar-accent-foreground)",
+        "source": "app/globals.css"
+      },
+      "--color-sidebar-border": {
+        "value": "var(--sidebar-border)",
+        "source": "app/globals.css"
+      },
+      "--color-sidebar-ring": {
+        "value": "var(--sidebar-ring)",
+        "source": "app/globals.css"
+      }
+    },
+    "typography": {
+      "--font-body": {
+        "value": "\"Studio Sans\", Arial, sans-serif",
+        "source": "app/globals.css"
+      },
+      "--font-display": {
+        "value": "\"Studio Display\", Georgia, serif",
+        "source": "app/globals.css"
+      },
+      "--font-hand": {
+        "value": "\"Studio Hand\", cursive",
+        "source": "app/globals.css"
+      },
+      "--font-heading": {
+        "value": "var(--font-body)",
+        "source": "app/globals.css"
+      },
+      "--type-body": {
+        "value": "clamp(.9375rem, .9rem + .15vw, 1rem)",
+        "source": "app/globals.css"
+      },
+      "--type-support": {
+        "value": ".875rem",
+        "source": "app/globals.css"
+      },
+      "--type-caption": {
+        "value": "12px",
+        "source": "app/globals.css"
+      },
+      "--type-label": {
+        "value": ".75rem",
+        "source": "app/globals.css"
+      },
+      "--type-title": {
+        "value": "clamp(1.875rem, 1.35rem + 2vw, 2.75rem)",
+        "source": "app/globals.css"
+      },
+      "--type-section": {
+        "value": "clamp(1.375rem, 1.1rem + 1vw, 1.875rem)",
+        "source": "app/globals.css"
+      },
+      "--type-display": {
+        "value": "clamp(2.5rem, 1.7rem + 3vw, 4.5rem)",
+        "source": "app/globals.css"
+      },
+      "--motion-context": {
+        "value": "280ms",
+        "source": "app/globals.css"
+      },
+      "--font-sans": {
+        "value": "var(--font-body)",
+        "source": "app/globals.css"
+      },
+      "--font-mono": {
+        "value": "ui-monospace, SFMono-Regular, Menlo, monospace",
+        "source": "app/globals.css"
+      }
+    },
+    "spacing": {
+      "--space-1": {
+        "value": "4px",
+        "source": "app/globals.css"
+      },
+      "--space-2": {
+        "value": "8px",
+        "source": "app/globals.css"
+      },
+      "--space-3": {
+        "value": "12px",
+        "source": "app/globals.css"
+      },
+      "--space-4": {
+        "value": "16px",
+        "source": "app/globals.css"
+      },
+      "--space-5": {
+        "value": "20px",
+        "source": "app/globals.css"
+      },
+      "--space-6": {
+        "value": "24px",
+        "source": "app/globals.css"
+      },
+      "--space-8": {
+        "value": "32px",
+        "source": "app/globals.css"
+      },
+      "--space-12": {
+        "value": "48px",
+        "source": "app/globals.css"
+      },
+      "--space-16": {
+        "value": "64px",
+        "source": "app/globals.css"
+      },
+      "--space-page": {
+        "value": "clamp(20px, 4vw, 56px)",
+        "source": "app/globals.css"
+      }
+    },
+    "radius": {
+      "--radius-control": {
+        "value": "10px",
+        "source": "app/globals.css"
+      },
+      "--radius-surface": {
+        "value": "16px",
+        "source": "app/globals.css"
+      },
+      "--radius-pill": {
+        "value": "999px",
+        "source": "app/globals.css"
+      },
+      "--radius": {
+        "value": "var(--radius-control)",
+        "source": "app/globals.css"
+      },
+      "--radius-sm": {
+        "value": "calc(var(--radius) - 4px)",
+        "source": "app/globals.css"
+      },
+      "--radius-md": {
+        "value": "calc(var(--radius) - 2px)",
+        "source": "app/globals.css"
+      },
+      "--radius-lg": {
+        "value": "var(--radius)",
+        "source": "app/globals.css"
+      },
+      "--radius-xl": {
+        "value": "calc(var(--radius) + 4px)",
+        "source": "app/globals.css"
+      }
+    },
+    "shadows": {
+      "--shadow-surface": {
+        "value": "0 6px 24px #091b3a0b",
+        "source": "app/globals.css"
+      }
+    },
+    "motion": {
+      "--motion-micro": {
+        "value": "160ms",
+        "source": "app/globals.css"
+      },
+      "--motion-state": {
+        "value": "240ms",
+        "source": "app/globals.css"
+      },
+      "--motion-ease": {
+        "value": "cubic-bezier(.22, 1, .36, 1)",
+        "source": "app/globals.css"
+      }
+    },
+    "density": "unknown"
+  },
+  "components": {
+    "installed": [
+      "accordion",
+      "alert",
+      "alert-dialog",
+      "animated-tabs",
+      "aspect-ratio",
+      "attachment",
+      "avatar",
+      "badge",
+      "breadcrumb",
+      "bubble",
+      "button",
+      "button-group",
+      "calendar",
+      "card",
+      "carousel",
+      "chart",
+      "checkbox",
+      "checkpoint",
+      "collapsible",
+      "combobox",
+      "command",
+      "context-menu",
+      "counter",
+      "dialog",
+      "direction",
+      "drawer",
+      "dropdown-menu",
+      "empty",
+      "field",
+      "form",
+      "hover-card",
+      "input",
+      "input-group",
+      "input-otp",
+      "item",
+      "kbd",
+      "label",
+      "marker",
+      "menubar",
+      "message",
+      "message-scroller",
+      "native-select",
+      "navigation-menu",
+      "pagination",
+      "popover",
+      "progress",
+      "progress-bar",
+      "radio-group",
+      "resizable",
+      "reward-button",
+      "scroll-area",
+      "scroll-line",
+      "select",
+      "separator",
+      "sheet",
+      "sidebar",
+      "skeleton",
+      "slider",
+      "sonner",
+      "spinner",
+      "stagger",
+      "switch",
+      "table",
+      "tabs",
+      "textarea",
+      "tilt-card",
+      "toggle",
+      "toggle-group",
+      "tooltip"
+    ],
+    "preferredPrimitives": [],
+    "patterns": []
+  },
+  "constraints": {
+    "must": [],
+    "avoid": []
+  },
+  "decisions": [
+    "FE-01: retain locally served Studio Sans (Inter) for interface, operational headings and tabular metrics; reserve Studio Display and Hand for editorial uses.",
+    "FE-01: semantic palette and scales live in app/globals.css; app/foundations.css is the final scoped layer after historical styles. Preserve route composition and existing local work.",
+    "FE-01: lavender, coral and teal accents use navy text; status text uses audited strong semantic colors on soft surfaces. See docs/redesign-frontend/VALIDACAO-FE-01.md.",
+    "Preservar o banner azul e lima APRENDER E AVANCAR da home, com trilha e cartoes flutuantes; escolha explicita do usuario em 15/10/2026. Mudancas de shell e correcoes funcionais devem preservar essa composicao.",
+    "2026-10-16: User-selected kinetic gamified direction. Bold two-part headings, handwritten editorial accents, navy/lime sliding mode tabs, illustrated local game worlds, spring card tilt and phased feedback. Motion 14 only; ambient hero movement is pausable and respects reduced motion."
+  ],
+  "evidence": [
+    {
+      "fact": "components.installed",
+      "source": "components/ui"
+    },
+    {
+      "fact": "design.colorMode:light",
+      "source": "app/globals.css"
+    },
+    {
+      "fact": "design.tokens",
+      "source": "app/globals.css"
+    },
+    {
+      "fact": "project.instructions",
+      "source": "AGENTS.md"
+    },
+    {
+      "fact": "project.stack:nextjs",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:react",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:shadcn",
+      "source": "components.json"
+    },
+    {
+      "fact": "project.stack:tailwind-v4",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:vite",
+      "source": "package.json"
+    }
+  ],
+  "generatedAt": "2026-10-15T14:04:40.686Z"
+}

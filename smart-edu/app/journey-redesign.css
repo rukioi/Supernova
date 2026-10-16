@@ -1,0 +1,73 @@
+﻿/* Journey collections and checkpoint trail: editorial scale, playable states. */
+.journey-app .j-classes .j-page-intro h1,.journey-app .j-lessons>.j-page-intro h1{font-size:clamp(38px,4.1vw,66px);line-height:.98;letter-spacing:-.055em;max-width:850px}
+.journey-app .j-classes .j-page-intro h1 em,.journey-app .j-lessons>.j-page-intro h1 em{font-style:normal;color:#2855ff;display:inline-block;position:relative}
+.journey-app .j-classes .j-page-intro h1 em:after,.journey-app .j-lessons>.j-page-intro h1 em:after{content:'';height:6px;background:#dfff4f;display:block;margin-top:7px;transform:rotate(-1deg);border-radius:2px}
+.journey-app .j-classes .j-collection-context{background:transparent;border:0;border-top:1px solid #ced7e9;border-bottom:1px solid #ced7e9;border-radius:0;padding:23px 0;margin-bottom:25px}
+.journey-app .j-collection-context>div>svg{width:45px;height:45px;background:#dfff4f;color:#102654;padding:11px;border-radius:50%}
+.journey-app .j-collection-context b{font-size:22px;letter-spacing:-.6px}
+.journey-app .j-class-toolbar{background:#fff;border:1px solid #dce3ef;border-radius:18px;padding:12px;gap:12px}
+.journey-app .j-view-toggle{background:#edf1f8;border:0;border-radius:12px;padding:4px}
+.journey-app .j-view-toggle button{transition:background .18s,color .18s,box-shadow .18s;min-height:40px;border-radius:9px;font-weight:650}
+.journey-app .j-view-toggle button[aria-pressed=true]{background:#2855ff;box-shadow:0 3px 9px #2855ff24}
+.journey-app .j-class-card{border-radius:22px;padding:0!important;display:block;box-shadow:0 4px 0 #dce3ef;border-top:0;overflow:hidden}
+.journey-app .j-class-card-main{padding:26px!important}
+.journey-app .j-class-card.is-featured{gap:0;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);background:#102654;border:1px solid #102654;box-shadow:0 5px 0 #bed03e}
+.journey-app .j-class-card.is-featured .j-class-card-main{padding:32px!important}
+.journey-app .j-class-card .j-class-name{align-items:flex-start;gap:15px;margin-top:24px}
+.journey-app .j-class-card .j-class-name h2{font-size:clamp(25px,2.4vw,35px);letter-spacing:-1.2px;line-height:1.07}
+.journey-app .j-class-card .j-class-name>span{font-size:15px;letter-spacing:-.5px;background:#edf1ff;border-radius:50%;width:35px;height:35px;flex:none;display:grid;place-items:center}
+.journey-app .j-class-card.is-featured .j-class-name>span{background:#dfff4f;color:#102654}
+.journey-app .j-class-card-side,.journey-app .j-class-card.is-featured .j-class-card-side{width:auto;padding:0 26px 26px!important;display:grid;grid-template-columns:1fr auto;gap:16px;margin:0;border:0;align-content:end;position:relative}
+.journey-app .j-class-card.is-featured .j-class-card-side{padding:20px!important;grid-template-columns:1fr;gap:16px;background:#193867}
+.journey-app .j-class-art{grid-column:1/-1;position:relative;overflow:hidden;border-radius:13px;min-width:0;background:#c0dcf5;aspect-ratio:2.25}
+.journey-app .j-class-art img{width:100%;height:100%;object-fit:cover;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.journey-app .j-class-art>span{position:absolute;bottom:10px;left:12px;right:12px;display:flex;align-items:center;justify-content:space-between;font-size:9px;font-weight:750;letter-spacing:.9px;padding:8px 10px;background:#fffedb;color:#102654;border-radius:5px}
+.journey-app .j-class-card.is-featured .j-class-art{aspect-ratio:1.8;min-height:180px}
+.journey-app .j-class-card:hover .j-class-art img,.journey-app .j-class-card:focus-visible .j-class-art img{transform:scale(1.045)}
+.journey-app .j-class-card .j-button svg{transition:transform .2s}
+.journey-app .j-class-card:hover .j-button svg{transform:translateX(4px)}
+.journey-app .j-class-card .j-class-next b{line-height:1.5}
+.journey-app .j-class-chapters{background:#e5ecfc;padding:16px 22px;border-radius:0 0 18px 18px;margin:0 10px;gap:10px}
+.journey-app .j-class-chapters a{border-radius:10px;box-shadow:0 3px 0 #c4d0e5;transition:transform .18s,box-shadow .18s;background:#fff}
+.journey-app .j-class-chapters a.is-now{background:#2855ff;box-shadow:0 3px 0 #1533aa}
+.journey-app .j-class-chapters a:hover{transform:translateY(-3px)}
+.journey-app .j-class-grid.is-list .j-class-card{display:flex}
+.journey-app .j-class-grid.is-list .j-class-card-side{display:flex;flex-direction:column;justify-content:center;min-width:230px;padding:24px!important}
+.journey-app .j-lessons-grid{grid-template-columns:minmax(230px,.65fr) minmax(0,1.55fr);gap:30px}
+.journey-app .j-lessons .j-journey-map{background:#eee8ff;border:0;border-radius:20px;padding:26px}
+.journey-app .j-lessons .j-journey-map h2{font-size:27px;letter-spacing:-1px;line-height:1.1}
+.journey-app .j-lessons .j-map-number{font-size:90px;letter-spacing:-7px;color:#5734a2}
+.journey-app .j-module-compass{position:relative;gap:7px}
+.journey-app .j-module-compass button{border-radius:12px;padding:10px;transition:background .18s,transform .18s}
+.journey-app .j-module-compass button:hover{transform:translateX(3px)}
+.journey-app .j-module-compass button>span{width:30px;height:30px;border-radius:10px;font-weight:750}
+.journey-app .j-module-compass button[aria-pressed=true]{background:#102654;color:#fff;box-shadow:0 4px 0 #c7b7ea}
+.journey-app .j-module-compass button b{font-weight:650}
+.journey-app .j-next-encounter{padding:0;display:flex;flex-direction:column;margin-left:48px;border:0;background:#dfff4f;border-radius:20px;box-shadow:0 5px 0 #c4d83b}
+.journey-app .j-next-illustration{height:170px;position:relative;overflow:hidden;background:#c3e5e7}
+.journey-app .j-next-illustration img{width:100%;height:100%;object-fit:cover;object-position:center 45%;transition:transform .45s}
+.journey-app .j-next-encounter:hover .j-next-illustration img{transform:scale(1.035)}
+.journey-app .j-next-illustration>span{position:absolute;top:15px;left:19px;background:#102654;color:#fff;display:flex;align-items:center;gap:25px;font-size:9px;letter-spacing:1px;font-weight:700;padding:10px 12px;border-radius:7px}
+.journey-app .j-next-copy{padding:25px 28px 28px;position:relative}
+.journey-app .j-next-copy h2{font-size:clamp(27px,3vw,39px);letter-spacing:-1.4px;line-height:1.05;max-width:90%;margin:12px 0}
+.journey-app .j-next-copy p{font-size:13px;max-width:90%}
+.journey-app .j-next-index{font-size:130px;right:19px;bottom:3px}
+.journey-app .j-lessons .j-lesson-stop{padding-left:48px;padding-bottom:20px}
+.journey-app .j-lessons .j-stop-node{border-radius:11px;width:32px;height:32px;top:21px;font-weight:750;box-shadow:0 3px 0 #dbe3ef}
+.journey-app .j-lessons .is-current .j-stop-node{box-shadow:0 3px 0 #122caa,0 0 0 5px #e1e7ff}
+.journey-app .j-lessons .j-lesson-stop:before{width:3px;left:15px;background:#d9e1ef;top:53px;bottom:-20px}
+.journey-app .j-lessons .is-complete.j-lesson-stop:before{background:#9bcec0}
+.journey-app .j-lessons .j-lesson-summary{padding:23px 24px;border-radius:16px;box-shadow:0 3px 0 #e0e6f0;transform:none}
+.journey-app .j-lessons .j-lesson-summary b{font-size:21px;letter-spacing:-.6px;line-height:1.2}
+.journey-app .j-lessons .j-lesson-summary small{font-size:9px;letter-spacing:1.5px;font-weight:750}
+.journey-app .j-lessons .is-current .j-lesson-summary{background:#2855ff;color:#fff;border-color:#2855ff;box-shadow:0 4px 0 #1635b4}
+.journey-app .j-lessons .is-current .j-lesson-summary :is(small,.j-lesson-status){color:#e0e8ff}
+.journey-app .j-lessons .is-future .j-lesson-summary{background:#f9faff;border-style:dashed}
+.journey-app .j-lessons .is-expanded .j-lesson-summary{border-radius:16px 16px 0 0;box-shadow:none}
+.journey-app .j-lessons .lesson-details{padding:25px;border-radius:0 0 16px 16px;box-shadow:0 4px 0 #e0e6f0}
+.journey-app .j-lessons .lesson-details ul{list-style:none;padding:0;display:grid;gap:9px}
+.journey-app .j-lessons .lesson-details li{padding:11px 14px 11px 35px;background:#f4f7fc;position:relative;border-radius:8px;line-height:1.5;font-size:13px}
+.journey-app .j-lessons .lesson-details li:before{content:'↗';position:absolute;left:13px;color:#2855ff;font-weight:750}
+@media(max-width:1050px){.journey-app .j-class-card.is-featured{grid-template-columns:minmax(0,1fr) minmax(230px,.8fr)}.journey-app .j-class-card .j-class-card-top{align-items:flex-start;flex-wrap:wrap}.journey-app .j-lessons-grid{gap:20px;grid-template-columns:235px minmax(0,1fr)}.journey-app .j-next-copy{padding:23px}.journey-app .j-next-copy h2{font-size:29px}.journey-app .j-next-copy .j-button{font-size:11px;padding:12px}.journey-app .j-class-card-side{grid-template-columns:1fr}.journey-app .j-next-illustration{height:145px}}
+@media(max-width:760px){.journey-app .j-classes .j-page-intro h1,.journey-app .j-lessons>.j-page-intro h1{font-size:clamp(33px,7.7vw,54px)}.journey-app .j-class-toolbar{padding:10px}.journey-app .j-classes .j-collection-context{padding:19px 0}.journey-app .j-collection-context b{font-size:18px}.journey-app .j-class-card.is-featured,.journey-app .j-class-grid.is-list .j-class-card{display:block}.journey-app .j-class-card-main,.journey-app .j-class-card.is-featured .j-class-card-main{padding:23px!important}.journey-app .j-class-card .j-class-card-side,.journey-app .j-class-card.is-featured .j-class-card-side{padding:18px 23px 23px!important;width:auto;min-height:0;display:grid;grid-template-columns:1fr}.journey-app .j-class-card.is-featured .j-class-art{min-height:0;aspect-ratio:2.15}.journey-app .j-class-card .j-class-name h2{font-size:28px}.journey-app .j-class-chapters{gap:6px;padding:14px 11px}.journey-app .j-class-chapters a{width:29px;height:31px;flex:none}.journey-app .j-lessons-grid{display:block}.journey-app .j-lessons .j-journey-map{position:static;margin-bottom:28px;padding:22px}.journey-app .j-lessons .j-map-number{font-size:65px;margin:18px 0}.journey-app .j-module-compass{grid-template-columns:1fr 1fr}.journey-app .j-module-compass button{padding:8px}.journey-app .j-module-compass button b{font-size:11px}.journey-app .j-next-encounter{margin-left:37px}.journey-app .j-next-copy{padding:22px}.journey-app .j-next-copy h2{font-size:30px;max-width:100%}.journey-app .j-next-copy p{max-width:100%}.journey-app .j-lessons .j-lesson-stop{padding-left:37px}.journey-app .j-lessons .j-stop-node{width:26px;height:29px;top:20px;font-size:10px}.journey-app .j-lessons .j-lesson-stop:before{left:12px;top:49px}.journey-app .j-lessons .j-lesson-summary{padding:20px 16px}.journey-app .j-lessons .j-lesson-summary b{font-size:19px}.journey-app .j-lessons .lesson-details{padding:19px}.journey-app .j-next-illustration{height:138px}}
+@media(prefers-reduced-motion:reduce){.journey-app .j-class-art img,.journey-app .j-next-illustration img,.journey-app .j-module-compass button,.journey-app .j-class-chapters a{transition:none!important}.journey-app .j-class-card:hover .j-class-art img,.journey-app .j-next-encounter:hover .j-next-illustration img,.journey-app .j-module-compass button:hover,.journey-app .j-class-chapters a:hover{transform:none!important}}

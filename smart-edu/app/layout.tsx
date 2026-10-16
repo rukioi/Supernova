@@ -1,3 +1,5 @@
+import { ProductApp } from "@/components/product/app";
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import "./globals.css";
 import "./product.css";
@@ -10,6 +12,14 @@ import "./preview.css";
 import "./controls.css";
 import "./campus.css";
 import "./game-maps.css";
+import "./foundations.css";
+import "./living-system.css";
+import "./journey-energy.css";
+import "./discovery-energy.css";
+import "./kinetic-system.css";
+import "./journey-redesign.css";
+import "./discovery-redesign.css";
+import "./game-motion-redesign.css";
 import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
@@ -31,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className="antialiased">{children}<Toaster /></body>
+      <body className="antialiased"><Suspense fallback={children}><ProductApp /></Suspense><Toaster /></body>
     </html>
   );
 }
