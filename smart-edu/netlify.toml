@@ -1,0 +1,9 @@
+# Netlify builds the app with the standard Next.js toolchain (OpenNext adapter
+# is applied automatically). `npm run build` stays on Vinext/Cloudflare for local use.
+[build]
+  command = "npm run build:netlify"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
